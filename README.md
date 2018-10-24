@@ -1,2 +1,2 @@
-# google-places-api-cacher
+# Google Places API Cacher
 Caching Utility for the Google Places API
