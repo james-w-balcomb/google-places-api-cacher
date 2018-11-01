@@ -1,0 +1,76 @@
+[DEFAULT]
+# Here up may put configuration items which should be included by default in every other section
+
+
+[google_places_api_cacher]
+;drop_existing_mysql_schema=False
+;drop_existing_mysql_table=False
+;schemas_to_keep=k_hcdr
+;tables_to_keep=[k_hcdr,application_train],[k_hcdr,bureau],[k_hcdr,bureau_balance]
+
+default_log_level=DEBUG
+
+
+# [mysql]: All the options relating to interacting with the MySQL server
+[mysql]
+# NOTE: To properly support the complete UTF-8 specification
+#       requires use_unicode=True, charset='utf8mb4', default_charset='utf8mb4', and collate='utf8mb4_unicode_ci'
+
+# host: The host name or IP address of the MySQL server
+host=127.0.0.1
+
+# port: The port number upon which the MySQL server is listening
+port=3306
+
+# db: The name of the database schema to use, instead of the directory names containing the CSV files
+db=google_places_api_cacher
+
+# charset: The MySQL character-set to specify when negotiatin the connection with the MySQL server
+charset=utf8mb4
+
+# TODO(JamesBalcomb): add notes for 'use_unicode'
+# use_unicode:
+use_unicode=True
+
+# TODO(JamesBalcomb): add notes for 'autocommit'
+# autocommit:
+autocommit=False
+
+# user: The user name with which to authenticate with the MySQL server
+user=gApiPlacesCacher
+
+# passwd: The pasword with which to authenticate with the MySQL server
+passwd=gApiPlacesCacher*$
+
+# cursorclass:
+;cursorclass='pymysql.cursors.DictCursor'
+
+# engine: The MySQL engine to specify when creating the database tables
+# engine=InnoDB
+storage_engine_name=InnoDB
+
+# default_charset: The MySQL character-set to specify when creating the database tables
+;default_charset=latin1
+;default_charset=utf8
+# default_charset=utf8mb4
+character_set_name=utf8mb4
+
+# collate: The MySQL collation to specify when creating the database tables
+;collate=latin1_general_ci
+# collate=utf8mb4_unicode_ci
+collattion_name=utf8mb4_unicode_ci
+
+default_table_comment=Created by google_places_api_cacher
+
+;unix_socket=
+;conv=
+;compress=
+;connect_timeout=
+;named_pipe=
+;init_command=
+;read_default_file=
+;read_default_group=
+;cursorclass=
+;use_unicode=
+;sql_mode=
+;ssl=
